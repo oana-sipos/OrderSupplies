@@ -6,6 +6,9 @@ gem 'rails', '4.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# ActiveAdmin
+gem 'activeadmin', github: 'gregbell/active_admin'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
