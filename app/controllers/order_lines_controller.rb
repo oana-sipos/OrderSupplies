@@ -1,7 +1,7 @@
 class OrderLinesController < ApplicationController
-  before_action :set_order_line, only: [:show, :edit, :update, :destroy]
+  before_action :set_order_line, only: [:show, :edit, :update, :destroy, :more, :less]
   before_filter :authenticate_user!
-  
+
   # GET /order_lines
   # GET /order_lines.json
   def index
@@ -20,6 +20,20 @@ class OrderLinesController < ApplicationController
 
   # GET /order_lines/1/edit
   def edit
+  end
+
+  # PUT /order_lines/1/more
+  def more
+    @order_line.amount += 1
+    @order_line.save!
+    redirect_to order_path(@order_line.order)
+  end
+
+  #PUT /order_lines/1/less
+  def less
+    @order_line.amount -= 1
+    @order_line.save!
+    redirect_to order_path(@order_line.order)
   end
 
   # POST /order_lines

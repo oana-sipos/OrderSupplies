@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :duplicate]
 
   # GET /orders
   # GET /orders.json
@@ -25,6 +25,22 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+  end
+
+  # POST /orders/1/duplicate
+  def duplicate
+    @new_order = Order.new
+    @new_order.order_date = Time.now.to_date
+    @new_order.user = current_user
+    @order.order_lines.each do |line|
+      @new_line = OrderLine.new
+      @new_line.article = line.article
+      @new_line.amount = line.amount
+      @new_line.save!
+      @new_order.order_lines << @new_line
+    end
+    @new_order.save!
+    redirect_to order_path(@new_order)
   end
 
   # POST /orders

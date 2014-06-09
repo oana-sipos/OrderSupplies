@@ -4,9 +4,18 @@ OrderSupplies::Application.routes.draw do
   
   resources :suppliers
 
-  resources :order_lines
+  resources :order_lines do
+    member do
+      put 'more'
+      put 'less'
+    end
+  end
 
-  resources :orders
+  resources :orders do
+    member do
+      post 'duplicate'
+    end
+  end
 
   resources :articles
 
