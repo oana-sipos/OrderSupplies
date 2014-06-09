@@ -1,3 +1,5 @@
+<div class="col-md-4 col-md-offset-4">
+
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
@@ -11,19 +13,27 @@
     </div>
   <% end %>
 
+<!-- to decide if to keep or not / to add a new column -->
+  <div class="field">
+    <%= f.label :id %><br>
+    <%= f.number_field :id %>
+  </div>
   <div class="field">
     <%= f.label :order_date %><br>
     <%= f.date_select :order_date %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= current_user.email %>
   </div>
   <div class="field">
     <%= f.label :delivery_date %><br>
     <%= f.date_select :delivery_date %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+   
+  <div>
+    <%= f.submit 'Save order', :class => "btn btn-success" %>
   </div>
 <% end %>
+
+</div>

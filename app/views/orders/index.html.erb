@@ -1,31 +1,40 @@
-<h1>Listing orders</h1>
+<div class='col-md-8 col-md-offset-2'>
+  <h1>Listing orders</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Order date</th>
-      <th>User</th>
-      <th>Delivery date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <br>
 
-  <tbody>
-    <% @orders.each do |order| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= order.order_date %></td>
-        <td><%= order.user_id %></td>
-        <td><%= order.delivery_date %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Order</th>
+        <th>Order date</th>
+        <th>User</th>
+        <th>Delivery date</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.id %></td>
+          <td><%= order.order_date %></td>
+          <td><%= order.user_id %></td>
+          <td><%= order.delivery_date %></td>
+          <td><%= link_to 'Show', order %></td>
+          <td><%= link_to 'Duplicate', duplicate_order_path(order), method: :post %></td>
+          <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<div class="col-md-4 col-md-offset-5">
+      <%= link_to "<button type='button', class='btn btn-success col-md-6'>New Order</button>".html_safe, new_order_path %> 
+</div>
