@@ -1,6 +1,7 @@
 OrderSupplies::Application.routes.draw do
-
-  get "welcome/index"
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  
   resources :suppliers
 
   resources :order_lines
