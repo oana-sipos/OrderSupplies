@@ -1,6 +1,7 @@
 class OrderLinesController < ApplicationController
   before_action :set_order_line, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
+  
   # GET /order_lines
   # GET /order_lines.json
   def index
