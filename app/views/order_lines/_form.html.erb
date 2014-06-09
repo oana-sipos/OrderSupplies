@@ -1,4 +1,4 @@
-<%= form_for(@order_line) do |f| %>
+<%= form_for(@order_line, url: order_lines_path) do |f| %>
   <% if @order_line.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order_line.errors.count, "error") %> prohibited this order_line from being saved:</h2>
@@ -11,19 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :order_id %><br>
-    <%= f.number_field :order_id %>
+<div class='row'>
+  <div class='form-group col-md-12'>
+    <div class="field col-sm-2 col-sm-offset-1">
+       <%= f.number_field :article_id, placeholder: 'Article id' %>
+    </div>
+
+    <div class="field col-sm-2 col-sm-offset-1">
+      <%= f.number_field :amount, placeholder: 'Amount' %>
+    </div>    
   </div>
-  <div class="field">
-    <%= f.label :article_id %><br>
-    <%= f.number_field :article_id %>
+  <%= f.hidden_field :order_id, value: @order_line.order_id %>
+  <%= f.submit "Add article", class: "btn btn-success" %>
   </div>
-  <div class="field">
-    <%= f.label :amount %><br>
-    <%= f.number_field :amount %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>

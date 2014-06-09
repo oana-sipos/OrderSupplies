@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Order line</th>
       <th>Order</th>
       <th>Article</th>
       <th>Amount</th>
@@ -15,8 +16,9 @@
   <tbody>
     <% @order_lines.each do |order_line| %>
       <tr>
+        <td><%= order_line.id %></td>
         <td><%= order_line.order_id %></td>
-        <td><%= order_line.article_id %></td>
+        <td><%= order_line.article.description %></td>
         <td><%= order_line.amount %></td>
         <td><%= link_to 'Show', order_line %></td>
         <td><%= link_to 'Edit', edit_order_line_path(order_line) %></td>
@@ -27,5 +29,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Order line', new_order_line_path %>
