@@ -43,7 +43,7 @@ class OrderLinesController < ApplicationController
 
     respond_to do |format|
       if @order_line.save
-        format.html { redirect_to @order_line, notice: 'Order line was successfully created.' }
+        format.html { redirect_to order_path(@order_line.order_id), notice: 'Order line was successfully created.' }
         format.json { render action: 'show', status: :created, location: @order_line }
       else
         format.html { render action: 'new' }
@@ -57,7 +57,7 @@ class OrderLinesController < ApplicationController
   def update
     respond_to do |format|
       if @order_line.update(order_line_params)
-        format.html { redirect_to @order_line, notice: 'Order line was successfully updated.' }
+        format.html { redirect_to order_path, notice: 'Order line was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
