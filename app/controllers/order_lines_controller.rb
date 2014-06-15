@@ -39,7 +39,13 @@ class OrderLinesController < ApplicationController
   # POST /order_lines
   # POST /order_lines.json
   def create
-    @order_line = OrderLine.new(order_line_params)
+    @order_line = OrderLine.find(:first, conditions: { article_id: order_line_params[:article_id], order_id: order_line_params[:order_id]} )
+
+    if @order_line.nil?
+      @order_line = OrderLine.new(order_line_params)
+    else 
+      @order_line.amount += order_line_params[:amount].to_i
+    end
 
     respond_to do |format|
       if @order_line.save
