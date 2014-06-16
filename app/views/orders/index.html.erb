@@ -24,9 +24,9 @@
           <td><%= order.order_date %></td>
           <td><%= order.user_id %></td>
           <td><%= order.delivery_date %></td>
-          <td><%= link_to 'Show', order %></td>
-          <td><%= link_to 'Duplicate', duplicate_order_path(order), method: :post %></td>
-          <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to "<span class='fa fa-folder-open'></span>".html_safe, order %></td>
+          <td><%= link_to "<span class='fa fa-code-fork'></span>".html_safe, duplicate_order_path(order), method: :post %></td>
+          <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
