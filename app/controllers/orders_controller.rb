@@ -43,14 +43,21 @@ class OrdersController < ApplicationController
     redirect_to order_path(@new_order)
   end
 
+  # def my_order
+  #   path = order_path(@order.uuid)
+  #   redirect_to path
+  # end
+
   # POST /orders
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.user_id = current_user.id
+    @order.uuid = SecureRandom.hex(8)
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to order_path+"#{@order.uuid}", notice: 'Order was successfully created.' }
         format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
@@ -86,6 +93,7 @@ class OrdersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
+      # @order = Order.find_by_uuid(params[:uuid])
       @order = Order.find(params[:id])
     end
 
