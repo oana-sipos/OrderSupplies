@@ -43,11 +43,26 @@ class OrdersController < ApplicationController
     redirect_to order_path(@new_order)
   end
 
-  # def my_order
-  #   path = order_path(@order.uuid)
-  #   redirect_to path
-  # end
+  def send_review
+    order = Order.find(params[:id])
+    users = User.all
 
+    users.each do |user| 
+      OrderMailer.send_for_review_email(user, order, current_user).deliver #deliver actually sends it
+    end
+    redirect_to order_path(params[:id])
+    # TO ADD A NOTIFICATION IF THE E-MAIL WAS SENT SUCCESSFULLY
+  end
+
+  def send_final_order
+    order = Order.find(params[:id])
+    @users = User.find(params[:id])
+
+    users.each do |user|
+      OrderMailer.send_final_order_email(user, order, current_user).deliver
+    end
+  end
+  
   # POST /orders
   # POST /orders.json
   def create
@@ -57,7 +72,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to order_path+"#{@order.uuid}", notice: 'Order was successfully created.' }
+        format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
@@ -90,15 +105,21 @@ class OrdersController < ApplicationController
     end
   end
 
+  def review
+    @order = Order.find_by(uuid: params[:uuid])
+    # respond_to do |format|
+      # format.html { render layout: false }
+    # end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      # @order = Order.find_by_uuid(params[:uuid])
       @order = Order.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:order_date, :user_id, :delivery_date)
+      params.require(:order).permit(:uuid, :order_date, :user_id, :delivery_date)
     end
 end

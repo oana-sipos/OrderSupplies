@@ -1,4 +1,4 @@
-  <div class='col-md-12'>
+<div class='col-md-12'>
   <div class='row'>
   <div class='col-md-3'>
     <p>
@@ -12,11 +12,6 @@
     </p>
 
     <p>
-      <strong>User:</strong>
-      <%= current_user.email %>
-    </p>
-
-    <p>
       <strong>Delivery date:</strong>
       <%= @order.delivery_date %>
     </p>
@@ -24,44 +19,10 @@
     <%= link_to "<button type='button', class='btn btn-success'>Edit</button>".html_safe, edit_order_path(@order) %>
       
     <%= link_to "<button type='button', class='btn btn-success'>Back</button>".html_safe, orders_path %>
-    </br>
-    <%= link_to "<button type='button', class='btn btn-success'>Send for Review</button>".html_safe, send_review_order_path(@order), method: :post %>
-    </br>
-    <%= link_to "<button type='button', class='btn btn-success'>Send final order</button>".html_safe, send_final_order_path %>
   </div>
 
   <div class='col-md-8 col-md-offset-1'>
-    <%= form_for(@order_line, url: order_lines_path) do |f| %>
-      <% if @order_line.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@order_line.errors.count, "error") %> prohibited this order_line from being saved:</h2>
-
-          <ul>
-          <% @order_line.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <div class='row'>
-        <div class='form-group'>
-          <div class="field col-md-4 dropdown">
-            <%= f.collection_select(:article_id, Article.order(:description), :id, :description, {prompt: "Article"}) %>
-          </div>
-
-          <div class="field col-md-4 col-md-offset-1">
-            <%= f.number_field :amount, placeholder: 'Amount' %>
-          </div>
-          <%= f.hidden_field :order_id, value: params[:id] %>
-          <%= f.button :submit do %>
-            <div class: 'btn btn-success'></div>Add article
-          <% end %>
-        </div>
-      </div>
-
-    <% end %>
-
+   
     <br>
 
     <table>

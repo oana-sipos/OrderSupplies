@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hey <%= @user%></h1>
+    <p>
+      Please review the current order created on <%= @order_date%>.
+      Here it is the list:
+      <%= @order %>
+    </p>
+    <p>Click here to modify the list <%= @url %>.</p>
+    <p>Thank you for your review.</p>
+  </body>
+</html>

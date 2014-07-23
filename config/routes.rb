@@ -11,10 +11,20 @@ OrderSupplies::Application.routes.draw do
     end
   end
 
+  # resources :orders do
+  #   member do
+  #     post 'duplicate'
+  #   end
+  #   collection do 
+  #     get '/review/:uuid/' => 'orders#review'
+  #   end
+  # end
+
   resources :orders do
-    member do
-      post 'duplicate'
-    end
+    get '/review/:uuid', action: 'review', on: :collection
+    post 'duplicate', on: :member
+    post 'send_review', on: :member
+    post 'send_final', on: :member
   end
 
   resources :articles

@@ -22,18 +22,21 @@
     <%= f.label :order_date %><br>
     <%= f.date_select :order_date %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= current_user.email %>
-  </div>
+  <!-- <div class="field"> -->
+    <!-- < %= f.label :user_id %><br> -->
+    <!-- < %= f.text_field :user_id, value: current_user.email %> -->
+  <!-- </div> -->
   <div class="field">
     <%= f.label :delivery_date %><br>
     <%= f.date_select :delivery_date %>
   </div>
-   
-  <div>
-    <%= f.submit 'Save order', :class => "btn btn-success" %>
+  
+  <div> 
+    <%= f.button :submit do %>
+      <div class: 'btn btn-success'></div>Save order
+    <% end %>
   </div>
+
 <% end %>
 
 </div>

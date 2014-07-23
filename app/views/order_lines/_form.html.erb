@@ -21,7 +21,7 @@
       <%= f.number_field :amount, placeholder: 'Amount' %>
     </div>    
   </div>
-  <%= f.hidden_field :order_id, value: @order_line.order_id %>
+  <%= f.hidden_field :uuid, value: @order_line.uuid %>
   <%= f.submit "Add article", class: "btn btn-success" %>
   </div>
 </div>
