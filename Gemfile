@@ -36,3 +36,6 @@ end
 group :production do
 	gem 'rails_12factor'
 end
+
+# Add currency codes
+gem 'money-rails'
