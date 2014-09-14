@@ -20,14 +20,15 @@ module OrderSupplies
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-        address:                'smtp.gmail.com', 
+    ActionMailer::Base.delivery_method = :smtp
+    ActionMailer::Base.smtp_settings = {
+        address:              ENV['SMTP_SERVER'], 
         port:                                587,
-        domain:                      'gmail.com',
-        user_name:        ENV['MAILER_USERNAME'],
-        password:         ENV["MAILER_PASSWORD"],
-        authentication:                  'plain',
+        # domain:                    'localhost',
+        domain:       'ordersupplies.heroku.com',
+        user_name:             ENV['SMTP_LOGIN'],
+        password:           ENV['SMTP_PASSWORD'],
+        authentication:                   :plain,
         enable_starttls_auto:                true            
     }
   end
