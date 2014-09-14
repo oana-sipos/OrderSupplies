@@ -21,7 +21,7 @@ OrderSupplies::Application.routes.draw do
   # end
 
   resources :orders do
-    get '/review/:uuid', action: 'review', on: :collection
+    get '/review/:uuid', action: 'review', on: :collection, as: 'review'
     post 'duplicate', on: :member
     post 'send_review', on: :member
     post 'send_final', on: :member
