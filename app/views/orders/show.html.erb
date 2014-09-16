@@ -64,7 +64,8 @@
 
     <br>
 
-    <table>
+  <div class='panel panel-success'>
+    <table class='table'>
       <thead>
         <tr>
           <th>Article description</th>
@@ -75,7 +76,7 @@
           <th></th>
         </thead>
 
-      <tbody>
+      <tbody class='panel-body'>
         <% @order.order_lines.each do |line| %>
         <tr>
           <td><%= line.article.description %></td>
@@ -90,5 +91,6 @@
     </table>
     <br>
   </div>
+
   </div>
 </div>
