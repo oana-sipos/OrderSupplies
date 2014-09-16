@@ -17,6 +17,18 @@ OrderSupplies::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+        address:              ENV['SMTP_SERVER'], 
+        port:                                587,
+        # domain:                    'localhost',
+        domain:       'ordersupplies.heroku.com',
+        user_name:             ENV['SMTP_LOGIN'],
+        password:           ENV['SMTP_PASSWORD'],
+        authentication:                   :plain,
+        enable_starttls_auto:                true            
+    }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

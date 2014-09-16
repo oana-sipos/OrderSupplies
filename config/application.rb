@@ -19,17 +19,5 @@ module OrderSupplies
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
-    ActionMailer::Base.delivery_method = :smtp
-    ActionMailer::Base.smtp_settings = {
-        address:              ENV['SMTP_SERVER'], 
-        port:                                587,
-        # domain:                    'localhost',
-        domain:       'ordersupplies.heroku.com',
-        user_name:             ENV['SMTP_LOGIN'],
-        password:           ENV['SMTP_PASSWORD'],
-        authentication:                   :plain,
-        enable_starttls_auto:                true            
-    }
   end
 end

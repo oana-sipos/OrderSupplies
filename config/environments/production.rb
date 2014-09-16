@@ -67,6 +67,18 @@ OrderSupplies::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
+  
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+        address:              ENV['SMTP_SERVER'], 
+        port:                                587,
+        # domain:                    'localhost',
+        domain:       'ordersupplies.heroku.com',
+        user_name:             ENV['SMTP_LOGIN'],
+        password:           ENV['SMTP_PASSWORD'],
+        authentication:                   :plain,
+        enable_starttls_auto:                true            
+    }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
