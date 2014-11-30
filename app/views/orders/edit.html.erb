@@ -1,6 +1,6 @@
-<h1>Editing order</h1>
+<h1>Edit order</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @order %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to "<button type='button', class='btn btn-success'>Show</button>".html_safe, @order %>
+<%= link_to "<button type='button', class='btn btn-success'>Back</button>".html_safe, @order %>

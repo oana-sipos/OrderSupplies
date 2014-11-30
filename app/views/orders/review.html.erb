@@ -16,9 +16,8 @@
       <%= @order.delivery_date %>
     </p>
 
-    <%= link_to "<button type='button', class='btn btn-success'>Edit</button>".html_safe, edit_order_path(@order) %>
-      
-    <%= link_to "<button type='button', class='btn btn-success'>Back</button>".html_safe, orders_path %>
+    <%= button_to 'Edit', edit_order_path(@order), class: 'btn btn-success' %>
+    <%= button_to 'Back', orders_path, class: 'btn btn-success' %>
   </div>
 
   <div class='col-md-8 col-md-offset-1'>

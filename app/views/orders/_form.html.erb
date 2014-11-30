@@ -32,9 +32,7 @@
   </div>
   
   <div> 
-    <%= f.button :submit do %>
-      <div class: 'btn btn-success'></div>Save order
-    <% end %>
+    <%= button_to 'Save order', orders_path, class: 'btn btn-success', method: 'post' %>
   </div>
 
 <% end %>
