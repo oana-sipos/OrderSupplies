@@ -1,10 +1,7 @@
 source 'https://rubygems.org'
 
-ruby '2.1.3'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.1.0'
 gem 'rails', '4.0.4'
-
-# Use postgresql as the database for Active Record
 gem 'pg'
 
 # ActiveAdmin
@@ -17,24 +14,24 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'turbolinks'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# Add Devise
 gem 'devise'
+gem 'thin'
 
 group :development do
-	gem 'better_errors'
-	gem 'rails-erd'
+  gem 'better_errors'
+  gem 'rails-erd'
+  gem 'binding_of_caller'
+  gem 'pry'
 end
 
 group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
 group :production do
-	gem 'rails_12factor'
+  gem 'rails_12factor'
 end
 
 gem 'rest_client'
