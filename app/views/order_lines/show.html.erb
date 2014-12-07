@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Order:</strong>
+  <strong><%= t('.order') %></strong>
   <%= @order_line.order_id %>
 </p>
 
 <p>
-  <strong>Article:</strong>
+  <strong><%= t('.article') %></strong>
   <%= @order_line.article_id %>
 </p>
 
 <p>
-  <strong>Amount:</strong>
+  <strong><%= t('.amount') %></strong>
   <%= @order_line.amount %>
 </p>
 
-<%= link_to 'Edit', edit_order_line_path(@order_line) %> |
-<%= link_to 'Back', order_lines_path %>
+<%= link_to t('.edit'), edit_order_line_path(@order_line) %> |
+<%= link_to t('.back'), order_lines_path %>

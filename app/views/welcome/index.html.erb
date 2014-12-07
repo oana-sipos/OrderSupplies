@@ -1,11 +1,11 @@
-<h1>So, you run out again of suppliees! </h1>
-<h2>No problem. Order here :) </h2>
+<h1><%= t('.title_1') %></h1>
+<h2><%= t('.title_2') %></h2>
 
 <br>
 
 <div class="row">
  <div class="col-md-4 col-md-offset-5">
-    <%= link_to "<button type='button', class='btn btn-success col-md-6'> New Order </button>".html_safe, new_order_path %>
+ 	<%= button_to t('.new_order'), new_order_path, class: 'btn btn-success col-md-6', method: 'get' %>
  </div>
 </div>
 
@@ -13,7 +13,7 @@
 
 <div class="row">
  <div class="col-md-4 col-md-offset-5">
-    <%= link_to "<button type='button', class='btn btn-success col-md-6'>All Orders</button>".html_safe, orders_path %> 
+ 	<%= button_to t('.all_orders'), orders_path, class: 'btn btn-success col-md-6', method: 'get' %>
  </div>
 </div>
   

@@ -2,32 +2,32 @@
   <div class='row'>
   <div class='col-md-3'>
     <p>
-      <strong>Order:</strong>
+      <strong><%= t('.order') %></strong>
       <%= @order.id %>
     </p>
 
     <p>
-      <strong>Order date:</strong>
+      <strong><%= t('.order_date') %></strong>
       <%= @order.order_date %>
     </p>
 
     <p>
-      <strong>User:</strong>
+      <strong><%= t('.user') %></strong>
       <%= current_user.email %>
     </p>
 
     <p>
-      <strong>Delivery date:</strong>
+      <strong><%= t('.delivery_date') %></strong>
       <%= @order.delivery_date %>
     </p>
 
-    <%= button_to 'Edit', edit_order_path(@order), class: 'btn btn-success' %>
+    <%= button_to t('.edit'), edit_order_path(@order), class: 'btn btn-success' %>
     <br />
-    <%= button_to 'Back', orders_path, class: 'btn btn-success' %>  
+    <%= button_to t('.back'), orders_path, class: 'btn btn-success' %>  
     <br />
-    <%= button_to 'Send for Review', send_review_order_path(@order), class: 'btn btn-success', method: 'post' %>
+    <%= button_to t('.send_for_review'), send_review_order_path(@order), class: 'btn btn-success', method: 'post' %>
     <br />
-    <%= button_to 'Send final order', send_final_order_path, class: 'btn btn-success' %>
+    <%= button_to t('.send_final_order'), send_final_order_path, class: 'btn btn-success' %>
   </div>
 
   <div class='col-md-8 col-md-offset-1'>
@@ -47,15 +47,15 @@
       <div class='row'>
         <div class='form-group'>
           <div class="field col-md-4 dropdown">
-            <%= f.collection_select(:article_id, Article.order(:description), :id, :description, {prompt: false}, title: "selecteer artikel", class: 'btn btn-default dropdown-toggle') %>
+            <%= f.collection_select(:article_id, Article.order(:description), :id, :description, {prompt: false}, title: t('.select_article'), class: 'btn btn-default dropdown-toggle') %>
           </div>
 
           <div class="field col-md-3">
-            <%= f.number_field :amount, placeholder: 'Amount', min: 1, class: 'form-control' %>
+            <%= f.number_field :amount, placeholder: t('.amount'), min: 1, class: 'form-control' %>
           </div>
           <div class="col-md-3 pull-right">
             <%= f.hidden_field :order_id, value: params[:id] %>
-            <%= button_to 'Add article', orders_path, class: 'btn btn-success', method: 'post' %>
+            <%= button_to t('.add_article'), orders_path, class: 'btn btn-success', method: 'post' %>
           </div>
         </div>
       </div>
@@ -68,8 +68,8 @@
     <table class='table'>
       <thead>
         <tr>
-          <th>Article description</th>
-          <th>Amount</th>
+          <th><%= t('.article_description') %></th>
+          <th><%= t('.amount') %></th>
           <th></th>
           <th></th>
           <th></th>
@@ -84,7 +84,7 @@
           <td><%= link_to "<span class='fa fa-edit'></span>".html_safe, edit_order_path(@order) %></td>
           <td><%= link_to "<span class='fa fa-plus'></span>".html_safe, more_order_line_path(line), method: :put %></td>
           <td><%= link_to "<span class='fa fa-minus'></span>".html_safe, less_order_line_path(line), method: :put %></td>
-          <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, line, method: :delete, data: { confirm: t('.are_you_sure') } %></td>
         </tr>
         <% end %>
       </tbody>

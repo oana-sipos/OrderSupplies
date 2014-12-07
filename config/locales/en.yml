@@ -1,23 +1,103 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  articles:
+    edit:
+      title: Editing article
+      show: Show
+      back: Back
+    index:
+      edit: Edit
+      destroy: Destroy
+      back: Back
+      show: Show
+      list: Listing articles
+      code: Article code
+      supplier: Supplier
+      description: Description
+      price: Price per unit
+      unit: Unit
+      are_you_sure: Are you sure?
+      new_article: New article
+    new:
+      new_article: New article
+      back: Back
+    show:
+      code: Article code
+      supplier: Supplier
+      description: Description
+      price: Price per unit
+      unit: Unit
+      edit: Edit
+      back: Back
+  order_lines:
+    edit:
+      title: Edit order line
+      show: Show
+      back: Back
+    index:
+      title: Listing order lines
+      order_line: Order line
+      order: Order
+      article: Article
+      amount: Amount
+      show: Show
+      edit: Edit
+      destroy: Destroy
+      are_you_sure: Are you sure?
+    new:
+      title: New order line
+      back: Back
+    show:
+      order: Order
+      article: Article
+      amount: Amount
+      edit: Edit
+      back: Back
+  orders:
+    form:
+      save_order: Save order
+    edit: 
+      title: Edit order
+      show: Show
+      back: Back
+    index:
+      list: Listing orders
+      orders: Orders
+      order_date: Order date
+      user: User
+      delivery_date: Delivery date
+      are_you_sure: Are you sure?
+      new_order: New order
+    new:
+      title: New order
+      back: Back
+      save_order: Save order
+    review:
+      order_id: 'Order:'
+      order_date: 'Order date:'
+      delivery_date: 'Delivery date:'
+      edit: Edit
+      back: Back
+      article_description: Article description
+      amount: Amount
+      are_you_sure: 'Are you sure?'
+    show:
+      order: Order
+      order_date: Order date
+      user: User
+      delivery_date: Delivery date
+      edit: Edit
+      back: Back
+      send_for_review: Send for review
+      send_final_order: Send final order
+      amount: Amount
+      add_article: Add article
+      select_article: Select article
+      article_description: Article description
+      are_you_sure: Are you sure?
+  suppliers:
+  welcome:
+    index:
+      title_1: 'So, you run out again of suppliees!'
+      title_2: 'No problem. Order here :)'
+      new_order: New order
+      all_orders: All orders

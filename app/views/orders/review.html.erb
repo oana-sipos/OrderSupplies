@@ -2,22 +2,22 @@
   <div class='row'>
   <div class='col-md-3'>
     <p>
-      <strong>Order:</strong>
+      <strong><%= t('.order_id') %></strong>
       <%= @order.id %>
     </p>
 
     <p>
-      <strong>Order date:</strong>
+      <strong><%= t('.order_date') %></strong>
       <%= @order.order_date %>
     </p>
 
     <p>
-      <strong>Delivery date:</strong>
+      <strong><%= t('.delivery_date') %></strong>
       <%= @order.delivery_date %>
     </p>
 
-    <%= button_to 'Edit', edit_order_path(@order), class: 'btn btn-success' %>
-    <%= button_to 'Back', orders_path, class: 'btn btn-success' %>
+    <%= button_to t('.edit'), edit_order_path(@order), class: 'btn btn-success', method: 'get' %>
+    <%= button_to t('.back'), orders_path, class: 'btn btn-success', method: 'get' %>
   </div>
 
   <div class='col-md-8 col-md-offset-1'>
@@ -27,8 +27,8 @@
     <table>
       <thead>
         <tr>
-          <th>Article description</th>
-          <th>Amount</th>
+          <th><%= t('.article_description') %></th>
+          <th><%= t('.amount') %></th>
           <th></th>
           <th></th>
           <th></th>
@@ -43,7 +43,7 @@
           <td><%= link_to "<span class='fa fa-edit'></span>".html_safe, edit_order_path(@order) %></td>
           <td><%= link_to "<span class='fa fa-plus'></span>".html_safe, more_order_line_path(line), method: :put %></td>
           <td><%= link_to "<span class='fa fa-minus'></span>".html_safe, less_order_line_path(line), method: :put %></td>
-          <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, line, method: :delete, data: { confirm: t('.are_you_sure') } %></td>
         </tr>
         <% end %>
       </tbody>

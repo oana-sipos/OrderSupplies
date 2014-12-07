@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Article code:</strong>
+  <strong><%= t('.code') %></strong>
   <%= @article.article_code %>
 </p>
 
 <p>
-  <strong>Supplier:</strong>
+  <strong><%= t('.supplier') %></strong>
   <%= @article.supplier_id %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t('.description') %></strong>
   <%= @article.description %>
 </p>
 
 <p>
-  <strong>Price per unit:</strong>
+  <strong><%= t('.price') %></strong>
   <%= @article.price_per_unit %>
 </p>
 
 <p>
-  <strong>Unit:</strong>
+  <strong><%= t('.unit') %></strong>
   <%= @article.unit %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to t('.edit'), edit_article_path(@article) %> |
+<%= link_to t('.back'), articles_path %>

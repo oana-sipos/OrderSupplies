@@ -1,12 +1,12 @@
-<h1>Listing order_lines</h1>
+<h1><%= t('.title') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Order line</th>
-      <th>Order</th>
-      <th>Article</th>
-      <th>Amount</th>
+      <th><%= t('.order_line') %></th>
+      <th><%= t('.order') %></th>
+      <th><%= t('.article') %></th>
+      <th><%= t('.amount') %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,9 +20,9 @@
         <td><%= order_line.order_id %></td>
         <td><%= order_line.article.description %></td>
         <td><%= order_line.amount %></td>
-        <td><%= link_to 'Show', order_line %></td>
-        <td><%= link_to 'Edit', edit_order_line_path(order_line) %></td>
-        <td><%= link_to 'Destroy', order_line, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('.show'), order_line %></td>
+        <td><%= link_to t('.edit'), edit_order_line_path(order_line) %></td>
+        <td><%= link_to t('.destroy'), order_line, method: :delete, data: { confirm: t('.are_you_sure') } %></td>
       </tr>
     <% end %>
   </tbody>

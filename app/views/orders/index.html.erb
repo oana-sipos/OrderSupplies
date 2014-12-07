@@ -1,5 +1,5 @@
 <div class='col-md-8 col-md-offset-2'>
-  <h1>Listing orders</h1>
+  <h1><%= t('.list') %></h1>
 
   <br>
 
@@ -7,10 +7,10 @@
   <table class='table'>
     <thead>
       <tr>
-        <th>Order</th>
-        <th>Order date</th>
-        <th>User</th>
-        <th>Delivery date</th>
+        <th><%= t('.orders') %></th>
+        <th><%= t('.order_date') %></th>
+        <th><%= t('.user') %></th>
+        <th><%= t('.delivery_date') %></th>
         <th></th>
         <th></th>
         <th></th>
@@ -27,7 +27,7 @@
           <td><%= order.delivery_date %></td>
           <td><%= link_to "<span class='fa fa-folder-open'></span>".html_safe, order %></td>
           <td><%= link_to "<span class='fa fa-code-fork'></span>".html_safe, duplicate_order_path(order), method: :post %></td>
-          <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, order, method: :delete, data: { confirm: t('.are_you_sure') } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -37,5 +37,5 @@
 <br>
 
 <div class="col-md-4 col-md-offset-5">
-  <%= button_to 'New order', new_order_path, class: 'btn btn-success col-md-6' %>
+  <%= button_to t('.new_order'), new_order_path, class: 'btn btn-success col-md-6', method: 'get' %>
 </div>
