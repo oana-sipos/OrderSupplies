@@ -16,7 +16,7 @@
 <!-- to decide if to keep or not / to add a new column -->
   <div class="field">
     <%= f.label :id %><br>
-    <%= f.number_field :id %>
+    <%= f.number_field :id, min: 1, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :order_date %><br>
@@ -32,7 +32,7 @@
   </div>
   
   <div>
-    <%= button_to t('.save_order'), orders_path, class: 'btn btn-success', method: 'post' %>
+    <%= button_to t('.save_order'), orders_path, class: 'btn btn-success pull-right', method: 'post' %>
   </div>
 
 <% end %>
