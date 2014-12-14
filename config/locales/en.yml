@@ -94,6 +94,10 @@ en:
       select_article: Select article
       article_description: Article description
       are_you_sure: Are you sure?
+    send_review:
+      review_sent: E-mail was sent for review.
+    send_final:
+      final_order_sent: Final order was sent.
   suppliers:
   welcome:
     index:

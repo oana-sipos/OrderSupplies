@@ -50,7 +50,7 @@ class OrdersController < ApplicationController
     users.each do |user| 
       OrderMailer.send_for_review_email(user, order, current_user).deliver #deliver actually sends it
     end
-    flash[:notice] = t('.review_sent')
+    flash[:success] = t('.review_sent')
     redirect_to order_path(params[:id])
   end
 
@@ -59,7 +59,7 @@ class OrdersController < ApplicationController
 
     OrderMailer.send_final_order_email(order, current_user).deliver
 
-    flash[:notice] = t('.final_order_sent')
+    flash[:success] = t('.final_order_sent')
     redirect_to order_path(params[:id])
   end
   
