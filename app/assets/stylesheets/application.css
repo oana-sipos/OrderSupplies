@@ -11,12 +11,29 @@
  *= require_self
  *= require_tree .
  *= require bootstrap.min
- *= require font-awesome
- */
-a {
-	text-decoration: none !important;
+ *= require font-awesome*/
+ 
+/*a {
+  text-decoration: none !important;
+  color: #906090;
 }
 
 a:hover {
-	background: transparent !important;
+  background: transparent !i;
 } 
+*/
+
+a:link, a:visited { 
+  color: #ff6600;
+  text-decoration: none;
+  cursor: auto;
+}
+
+a:link:active, a:visited:active { 
+  color: #666633;
+}
+
+a:link:hover {
+  color: #754719;
+  background: transparent;
+}
