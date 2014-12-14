@@ -1,0 +1,11 @@
+Hey!
+ 
+Please find below the current order created on <%= @order.order_date %>.
+Here it is the list:
+  Article    |   Amount
+  <% @order.order_lines.each do |order_line| %>
+    <%= order_line.article.description %> | <%= order_line.amount %>
+  <% end %>
+Click here to modify the list<%= review_orders_url(@order.uuid) %>.
+
+Thank you!

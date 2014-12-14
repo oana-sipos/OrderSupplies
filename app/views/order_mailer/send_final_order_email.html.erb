@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Hey!</h3>
+    <p>
+      Please find below the current order created on <%= @order.order_date %>.
+      Here it is the list:
+      <table>
+        <thead>
+          <tr text-align='center'>
+            <th>Article<th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order.order_lines.each do |order_line| %>
+            <tr text-align='center'>
+              <td><%= order_line.article.description %></td>
+              <td><%= order_line.amount %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </p>
+    <p>Thank you!<p>
+  </body>
+</html>

@@ -50,17 +50,17 @@ class OrdersController < ApplicationController
     users.each do |user| 
       OrderMailer.send_for_review_email(user, order, current_user).deliver #deliver actually sends it
     end
+    flash[:notice] = t('.review_sent')
     redirect_to order_path(params[:id])
-    # TO ADD A NOTIFICATION IF THE E-MAIL WAS SENT SUCCESSFULLY
   end
 
-  def send_final_order
+  def send_final
     order = Order.find(params[:id])
-    @users = User.find(params[:id])
 
-    users.each do |user|
-      OrderMailer.send_final_order_email(user, order, current_user).deliver
-    end
+    OrderMailer.send_final_order_email(order, current_user).deliver
+
+    flash[:notice] = t('.final_order_sent')
+    redirect_to order_path(params[:id])
   end
   
   # POST /orders
