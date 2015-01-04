@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
 gem 'rails', '4.0.4'
 gem 'pg'
 
@@ -18,6 +17,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 gem 'thin'
+
+gem "omniauth-google-oauth2"
 
 group :development do
   gem 'better_errors'
