@@ -23,7 +23,7 @@
 
     <%= button_to t('.edit'), edit_order_path(@order), class: 'btn btn-success' %>
     <br />
-    <%= button_to t('.back'), orders_path, class: 'btn btn-success' %>  
+    <%= button_to t('.back'), orders_path, class: 'btn btn-success' %>
     <br />
     <%= button_to t('.send_for_review'), send_review_order_path(@order), class: 'btn btn-success', method: 'post' %>
     <br />
@@ -50,7 +50,7 @@
             <%= f.collection_select(:article_id, Article.order(:description), :id, :description, {prompt: false}, title: t('.select_article'), class: 'btn btn-default dropdown-toggle') %>
           </div>
           <div class="field col-md-3">
-            <%= f.number_field :amount, placeholder: t('.amount'), min: 1, class: 'form-control' %>
+            <%= f.number_field :amount, placeholder: t('.amount'), min: 1, class: 'form-control', required: true %>
           </div>
           <div class="col-md-3 pull-right">
             <%= f.hidden_field :order_id, value: params[:id] %>
