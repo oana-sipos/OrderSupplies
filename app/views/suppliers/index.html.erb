@@ -1,33 +1,36 @@
-<h1>Listing suppliers</h1>
+<div class="col-sm-8 col-sm-offset-2">
+  <h1>Listing suppliers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Article</th>
-      <th>Address</th>
-      <th>Email</th>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <div class="panel panel-success">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Article</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @suppliers.each do |supplier| %>
-      <tr>
-        <td><%= supplier.article_id %></td>
-        <td><%= supplier.address %></td>
-        <td><%= supplier.email %></td>
-        <td><%= supplier.name %></td>
-        <td><%= link_to 'Show', supplier %></td>
-        <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-        <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody class='panel-body'>
+        <% @suppliers.each do |supplier| %>
+          <tr>
+            <td><%= supplier.article_id %></td>
+            <td><%= supplier.address %></td>
+            <td><%= supplier.email %></td>
+            <td><%= supplier.name %></td>
+            <td><%= link_to "<span class='fa fa-folder-open'></span>".html_safe, supplier %></td>
+            <td><%= link_to "<span class='fa fa-code-fork'></span>".html_safe, edit_supplier_path(supplier) %></td>
+            <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
 
-<br>
-
-<%= link_to 'New Supplier', new_supplier_path %>
+  <%= button_to 'New Supplier', new_supplier_path, class: 'btn btn-default', method: :get %>
+</div>
