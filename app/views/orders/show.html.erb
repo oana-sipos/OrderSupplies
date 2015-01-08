@@ -21,13 +21,13 @@
       <%= @order.delivery_date %>
     </p>
 
-    <%= button_to t('.edit'), edit_order_path(@order), class: 'btn btn-success' %>
+    <%= button_to t('.edit'), edit_order_path(@order), class: 'btn btn-orange' %>
     <br />
-    <%= button_to t('.back'), orders_path, class: 'btn btn-success' %>
+    <%= button_to t('.back'), orders_path, class: 'btn btn-orange' %>
     <br />
-    <%= button_to t('.send_for_review'), send_review_order_path(@order), class: 'btn btn-success', method: 'post' %>
+    <%= button_to t('.send_for_review'), send_review_order_path(@order), class: 'btn btn-orange', method: 'post' %>
     <br />
-    <%= button_to t('.send_final_order'), send_final_order_path, class: 'btn btn-success' %>
+    <%= button_to t('.send_final_order'), send_final_order_path, class: 'btn btn-orange' %>
   </div>
 
   <div class='col-md-8 col-md-offset-1'>
@@ -54,7 +54,7 @@
           </div>
           <div class="col-md-3 pull-right">
             <%= f.hidden_field :order_id, value: params[:id] %>
-            <%= button_to t('.add_article'), orders_path, class: 'btn btn-success', method: 'post' %>
+            <%= button_to t('.add_article'), orders_path, class: 'btn btn-orange', method: 'post' %>
           </div>
         </div>
       </div>

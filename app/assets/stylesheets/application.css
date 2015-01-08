@@ -37,3 +37,25 @@ a:link:hover {
   color: #754719;
   background: transparent;
 }
+
+.btn-orange {
+  color: #FFFFFF;
+  background-color: #FF6600;
+  border-color: #FF6600;
+}
+
+.btn-orange:hover,
+.btn-orange:focus,
+.btn-orange:active,
+.btn-orange.active,
+.open .dropdown-toggle.btn-orange {
+  color: #FFFFFF;
+  background-color: #FF6600;
+  border-color: #FF6600;
+}
+
+.btn-orange:active,
+.btn-orange.active,
+.open .dropdown-toggle.btn-orange {
+  background-image: none;
+}
