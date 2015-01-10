@@ -1,39 +1,40 @@
-<h1><%= t('.list') %>
-<%= link_to t('.new_article'), new_article_path, class: 'pull-right' %>
-</h1>
+<div class='col-md-8 col-md-offset-2'>
+  <h1><%= t('.list') %>
+  <%= link_to t('.new_article'), new_article_path, class: 'pull-right' %>
+  </h1>
 
-<br />
+  <br />
 
-<div class='panel panel-success'>
-  <table class='table'>
-    <thead>
-      <tr>
-        <th><%= t('.code') %></th>
-        <th><%= t('.supplier') %></th>
-        <th><%= t('.description') %></th>
-        <th><%= t('.price') %></th>
-        <th><%= t('.unit') %></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @articles.each do |article| %>
+  <div class='panel panel-success'>
+    <table class='table'>
+      <thead>
         <tr>
-          <td><%= article.article_code %></td>
-          <td><%= article.supplier_id %></td>
-          <td><%= article.description %></td>
-          <td><%= article.price_per_unit %></td>
-          <td><%= article.unit %></td>
-          <td><%= link_to "<span class='fa fa-folder-open'></span>".html_safe, article %></td>
-          <td><%= link_to "<span class='fa fa-code-fork'></span>".html_safe, edit_article_path(article) %></td>
-          <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, article, method: :delete, data: { confirm: t('.are_you_sure') } %></td>
+          <th><%= t('.code') %></th>
+          <th><%= t('.supplier') %></th>
+          <th><%= t('.description') %></th>
+          <th><%= t('.price') %></th>
+          <th><%= t('.unit') %></th>
+          <th></th>
+          <th></th>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
 
+      <tbody>
+        <% @articles.each do |article| %>
+          <tr>
+            <td><%= article.article_code %></td>
+            <td><%= article.supplier_id %></td>
+            <td><%= article.description %></td>
+            <td><%= article.price_per_unit %></td>
+            <td><%= article.unit %></td>
+            <td><%= link_to "<span class='fa fa-folder-open'></span>".html_safe, article %></td>
+            <td><%= link_to "<span class='fa fa-code-fork'></span>".html_safe, edit_article_path(article) %></td>
+            <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, article, method: :delete, data: { confirm: t('.are_you_sure') } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 <br>
