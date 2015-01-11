@@ -3,21 +3,21 @@ development:
   encoding: unicode
   database: OrderSupplies_development
   pool: 5
-  username: order_supplies
-  password:
+  username: upnxt
+  password: upnxt
 
 test:
   adapter: postgresql
   encoding: unicode
   database: OrderSupplies_test
   pool: 5
-  username: order_supplies
-  password:
+  username: upnxt
+  password: upnxt
 
 production:
   adapter: postgresql
   encoding: unicode
   database: OrderSupplies_production
   pool: 5
-  username: order_supplies
-  password:
+  username: upnxt
+  password: upnxt
