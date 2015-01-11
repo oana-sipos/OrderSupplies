@@ -71,8 +71,8 @@ OrderSupplies::Application.configure do
   ActionMailer::Base.smtp_settings = {
         address:              ENV['SMTP_SERVER'], 
         port:                                587,
-        # domain:                    'localhost',
-        domain:       'ordersupplies.heroku.com',
+        domain:                    'localhost',
+        # sdomain:       'ordersupplies.heroku.com',
         user_name:             ENV['SMTP_LOGIN'],
         password:           ENV['SMTP_PASSWORD'],
         authentication:                   :plain,

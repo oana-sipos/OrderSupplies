@@ -12,7 +12,7 @@
 secret = 'bbce0fd228b64bbec1af65ccd8e1bb813938d34cdd65b929d663ef691e8aa1aeea170d087e3d5fe94bb57e503f635c0f789a1922f250c7d1d12ffbeb427ae409'
 
 if secret.nil? || secret.length < 30
-	puts 'secret token cannot be loaded'
-else
-	OrderSupplies::Application.config.secret_key_base = secret
+  puts 'secret token cannot be loaded'
+else 
+  OrderSupplies::Application.config.secret_key_base = secret
 end	
