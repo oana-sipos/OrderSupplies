@@ -76,7 +76,7 @@
         </thead>
 
       <tbody class='panel-body'>
-        <% @order.order_lines.each do |line| %>
+        <% @order.order_lines.sort_by{ |a| a.created_at }.reverse.each do |line| %>
         <tr>
           <td><%= line.article.description %></td>
           <td><%= line.amount %></td>
