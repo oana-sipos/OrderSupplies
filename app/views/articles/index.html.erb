@@ -74,7 +74,7 @@
             <td><%= article.price_per_unit %></td>
             <td><%= article.unit %></td>
             <td><%= link_to "<span class='fa fa-folder-open'></span>".html_safe, article %></td>
-            <td><%= link_to "<span class='fa fa-code-fork'></span>".html_safe, edit_article_path(article) %></td>
+            <td><%= link_to "<span class='fa fa-edit'></span>".html_safe, edit_article_path(article) %></td>
             <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, article, method: :delete, data: { confirm: t('.are_you_sure') } %></td>
           </tr>
         <% end %>

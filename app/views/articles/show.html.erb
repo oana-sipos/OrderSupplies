@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-4 col-md-offset-4">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong><%= t('.code') %></strong>
-  <%= @article.article_code %>
-</p>
+  <p>
+    <strong><%= t('.code') %></strong>
+    <%= @article.article_code %>
+  </p>
 
-<p>
-  <strong><%= t('.supplier') %></strong>
-  <%= @article.supplier_id %>
-</p>
+  <p>
+    <strong><%= t('.supplier') %></strong>
+    <%= @article.supplier_id %>
+  </p>
 
-<p>
-  <strong><%= t('.description') %></strong>
-  <%= @article.description %>
-</p>
+  <p>
+    <strong><%= t('.description') %></strong>
+    <%= @article.description %>
+  </p>
 
-<p>
-  <strong><%= t('.price') %></strong>
-  <%= @article.price_per_unit %>
-</p>
+  <p>
+    <strong><%= t('.price') %></strong>
+    <%= @article.price_per_unit %>
+  </p>
 
-<p>
-  <strong><%= t('.unit') %></strong>
-  <%= @article.unit %>
-</p>
+  <p>
+    <strong><%= t('.unit') %></strong>
+    <%= @article.unit %>
+  </p>
 
-<%= link_to t('.edit'), edit_article_path(@article) %> |
-<%= link_to t('.back'), articles_path %>
+  <%= button_to t('.back'), articles_path, class: 'btn btn-orange', method: 'get' %>
+</div>

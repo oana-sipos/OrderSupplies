@@ -13,25 +13,25 @@
 
   <div class="field">
     <%= f.label :article_code %><br>
-    <%= f.number_field :article_code %>
+    <%= f.number_field :article_code, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :supplier_id %><br>
-    <%= f.number_field :supplier_id %>
+    <%= f.number_field :supplier_id, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :price_per_unit %><br>
-    <%= f.number_field :price_per_unit %>
+    <%= f.number_field :price_per_unit, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :unit %><br>
-    <%= f.text_field :unit %>
+    <%= f.text_field :unit, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= button_to t('.save'), articles_path, class: 'btn btn-orange pull-right', method: 'post' %>
   </div>
 <% end %>

@@ -1,6 +1,7 @@
-<h1><%= t('.title') %></h1>
+<div class="col-md-4 col-md-offset-4">
+  <h1><%= t('.title') %></h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to t('.show'), @article %> |
-<%= link_to t('.back'), articles_path %>
+  <%= button_to t('.back'), articles_path, class: 'btn btn-orange' %>
+</div>

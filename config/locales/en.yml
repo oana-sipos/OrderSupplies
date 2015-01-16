@@ -1,5 +1,7 @@
 en:
   articles:
+    form:
+      save: Update
     edit:
       title: Editing article
       show: Show
