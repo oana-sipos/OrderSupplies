@@ -81,7 +81,10 @@
       </tbody>
     </table>
   </div>
+
+  <%= will_paginate @articles, renderer: BootstrapPagination::Rails, class: 'pull-right' %>
 </div>
+
 <br>
 
 <script type="text/javascript">
