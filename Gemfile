@@ -19,6 +19,7 @@ gem 'devise'
 gem 'thin'
 
 gem "omniauth-google-oauth2"
+gem 'will_paginate', '~> 3.0.6'
 
 group :development do
   gem 'better_errors'
