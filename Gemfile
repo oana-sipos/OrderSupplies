@@ -20,6 +20,7 @@ gem 'thin'
 
 gem "omniauth-google-oauth2"
 gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 group :development do
   gem 'better_errors'
