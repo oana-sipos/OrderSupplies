@@ -39,7 +39,7 @@ class OrderLinesController < ApplicationController
   # POST /order_lines
   # POST /order_lines.json
   def create
-    @order_line = OrderLine.find(:first, conditions: { article_id: order_line_params[:article_id], order_id: order_line_params[:order_id]} )
+    @order_line = OrderLine.find(:first, conditions: { article_id: order_line_params[:article_id], order_id: order_line_params[:order_id]})
 
     if @order_line.nil?
       @order_line = OrderLine.new(order_line_params)
@@ -50,9 +50,9 @@ class OrderLinesController < ApplicationController
     respond_to do |format|
       if @order_line.save
         format.html { redirect_to order_path(@order_line.order_id), notice: 'Order line was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @order_line }
+        format.json { render 'show', status: :created, location: @order_line }
       else
-        format.html { render action: 'new' }
+        format.html { render 'new' }
         format.json { render json: @order_line.errors, status: :unprocessable_entity }
       end
     end
@@ -66,7 +66,7 @@ class OrderLinesController < ApplicationController
         format.html { redirect_to order_path, notice: 'Order line was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render 'edit' }
         format.json { render json: @order_line.errors, status: :unprocessable_entity }
       end
     end

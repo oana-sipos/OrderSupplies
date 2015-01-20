@@ -1,5 +1,5 @@
 class Supplier < ActiveRecord::Base
 
-  #relationships
+  #relationships 
   has_many :articles
 end

@@ -29,9 +29,9 @@ class SuppliersController < ApplicationController
     respond_to do |format|
       if @supplier.save
         format.html { redirect_to @supplier, notice: 'Supplier was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @supplier }
+        format.json { render 'show', status: :created, location: @supplier }
       else
-        format.html { render action: 'new' }
+        format.html { render 'new' }
         format.json { render json: @supplier.errors, status: :unprocessable_entity }
       end
     end
@@ -45,7 +45,7 @@ class SuppliersController < ApplicationController
         format.html { redirect_to @supplier, notice: 'Supplier was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render 'edit' }
         format.json { render json: @supplier.errors, status: :unprocessable_entity }
       end
     end

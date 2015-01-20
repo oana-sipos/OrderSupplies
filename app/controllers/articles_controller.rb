@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.paginate(:page => params[:page], :per_page => 5)
+    @articles = Article.paginate(page: params[:page], per_page: 5)
     @article = Article.new
   end
 
@@ -30,9 +30,9 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.save
         format.html { redirect_to articles_path, notice: 'Article was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @articles }
+        format.json { render 'show', status: :created, location: @articles }
       else
-        format.html { render action: 'new' }
+        format.html { render 'new' }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render 'edit' }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end

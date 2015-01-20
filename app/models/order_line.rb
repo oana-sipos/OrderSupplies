@@ -1,6 +1,6 @@
 class OrderLine < ActiveRecord::Base
 
-  #relationships
+  #relationships 
   belongs_to :order
   belongs_to :article
 

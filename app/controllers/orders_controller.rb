@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
     users = User.all
 
     users.each do |user| 
-      OrderMailer.send_for_review_email(user, order, current_user).deliver #deliver actually sends it
+      OrderMailer.send_for_review_email(user, order, current_user).deliver #deliver actually sends it 
     end
     flash[:success] = t('.review_sent')
     redirect_to order_path(params[:id])
@@ -73,9 +73,9 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @order }
+        format.json { render 'show', status: :created, location: @order }
       else
-        format.html { render action: 'new' }
+        format.html { render 'new' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -89,7 +89,7 @@ class OrdersController < ApplicationController
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render 'edit' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
