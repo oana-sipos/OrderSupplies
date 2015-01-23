@@ -63,7 +63,7 @@ en:
       back: Back
     index:
       list: Listing orders
-      orders: Orders
+      orders: Order id
       order_date: Order date
       user: User
       delivery_date: Delivery date
