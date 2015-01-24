@@ -5,39 +5,40 @@
   </div>
 
   <br>
-
-<div class='panel panel-success'>
-  <table class='table'>
-    <thead>
-      <tr>
-        <th><%= t('.orders') %></th>
-        <th><%= t('.order_date') %></th>
-        <th><%= t('.user') %></th>
-        <th><%= t('.delivery_date') %></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody class='panel-body'>
-      <% @orders.each do |order| %>
+<div class="row">
+  <div class='panel panel-success'>
+    <table class='table'>
+      <thead>
         <tr>
-          <td><%= order.id %></td>
-          <td><%= order.order_date %></td>
-          <td><%= order.user.email if order.user %></td>
-          <td><%= order.delivery_date %></td>
-          <td><%= link_to "<span class='fa fa-folder-open'></span>".html_safe, order %></td>
-          <td><%= link_to "<span class='fa fa-code-fork'></span>".html_safe, duplicate_order_path(order), method: :post %></td>
-          <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, order, method: :delete, data: { confirm: t('.are_you_sure') } %></td>
+          <th><%= t('.orders') %></th>
+          <th><%= t('.order_date') %></th>
+          <th><%= t('.user') %></th>
+          <th><%= t('.delivery_date') %></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
 
-<%= will_paginate @orders, renderer: BootstrapPagination::Rails, class: 'pull-right' %>
+      <tbody class='panel-body'>
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.id %></td>
+            <td><%= order.order_date %></td>
+            <td><%= order.user.email if order.user %></td>
+            <td><%= order.delivery_date %></td>
+            <td><%= link_to "<span class='fa fa-folder-open'></span>".html_safe, order %></td>
+            <td><%= link_to "<span class='fa fa-code-fork'></span>".html_safe, duplicate_order_path(order), method: :post %></td>
+            <td><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, order, method: :delete, data: { confirm: t('.are_you_sure') } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= will_paginate @orders, renderer: BootstrapPagination::Rails, class: 'pull-right' %>
+</div>
 </div>
 <br>
 
