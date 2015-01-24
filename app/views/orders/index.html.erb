@@ -1,5 +1,8 @@
 <div class='col-md-8 col-md-offset-2'>
-  <h1><%= t('.list') %></h1>
+  <div class="row">
+    <h1><%= t('.list') %></h1>
+    <%= button_to t('.new_order'), new_order_path, class: 'btn btn-orange pull-right', method: 'get' %>
+  </div>
 
   <br>
 
@@ -37,10 +40,6 @@
 <%= will_paginate @orders, renderer: BootstrapPagination::Rails, class: 'pull-right' %>
 </div>
 <br>
-
-<div class="col-md-4 col-md-offset-5">
-  <%= button_to t('.new_order'), new_order_path, class: 'btn btn-orange col-md-6', method: 'get' %>
-</div>
 
 <script type="text/javascript">
 $(document).ready(function() {
