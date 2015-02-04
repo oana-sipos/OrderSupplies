@@ -103,7 +103,7 @@ en:
   suppliers:
   welcome:
     index:
-      title_1: 'So, you run out again of suppliees!'
+      title_1: 'So, you run out again of supplies!'
       title_2: 'No problem. Order here :)'
       new_order: New order
       all_orders: All orders
